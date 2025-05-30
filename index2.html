@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filtro Interactivo de Productos de Librería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="Imagenes/">
+   
+</head>
+
+<body>
+    <div class="container" role="main">
+        <aside class="sidebar" aria-label="Filtro de filtros">
+            <h2>Filtros</h2>
+            <input type="text" class="search-input" id="categorySearch" placeholder="Buscar filtros..."
+                aria-label="Buscar filtros" autocomplete="off" />
+            <section class="category-group" data-group="Carreras">
+                <h3 tabindex="0" aria-expanded="true" aria-controls="listCarreras">
+                    Carrera universitaria <span aria-hidden="true">&#x25BC;</span>
+                </h3>
+                <ul class="category-list" id="listCarreras">
+                    <li><label><input type="checkbox" name="categoria" value="Arquitectura" /> Arquitectura</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Ing. Civil" /> Ing. Civil</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Enfermería" /> Enfermería</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Obstetricia" /> Obstetricia</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Ing. Sistemas" /> Ing. Sistemas</label>
+                    </li>
+                    <li><label><input type="checkbox" name="categoria" value="Ing. Industrial" /> Ing.
+                            Industrial</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Economía" /> Economía</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Derecho" /> Derecho</label></li>
+                </ul>
+            </section>
+            <section class="category-group" data-group="UtilesEscolares">
+                <h3 tabindex="0" aria-expanded="true" aria-controls="listUtiles">
+                    Útiles escolares <span aria-hidden="true">&#x25BC;</span>
+                </h3>
+                <ul class="category-list" id="listUtiles">
+                    <li><label><input type="checkbox" name="categoria" value="Lápices y Bolígrafos" /> Lápices y
+                            Bolígrafos</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Pinturas" /> Pinturas</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Marcadores y Resaltadores" /> Marcadores y
+                            Resaltadores</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Papelería" /> Papelería</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Material para Maquetas" /> Material para
+                            Maquetas</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Adhesivos y Útiles" /> Adhesivos y
+                            Útiles</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Libros" /> Libros</label></li>
+                </ul>
+            </section>
+            <section class="category-group" data-group="ArticulosOficina">
+                <h3 tabindex="0" aria-expanded="true" aria-controls="listOficina">
+                    Artículos de oficina <span aria-hidden="true">&#x25BC;</span>
+                </h3>
+                <ul class="category-list" id="listOficina">
+                    <li><label><input type="checkbox" name="categoria" value="Artículos de oficina" /> Artículos de
+                            oficina</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Clips" /> Clips</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Tijeras" /> Tijeras</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Tajadores" /> Tajadores</label></li>
+                </ul>
+            </section>
+            <section class="category-group" data-group="Otros">
+                <h3 tabindex="0" aria-expanded="true" aria-controls="listOtros">
+                    Otros <span aria-hidden="true">&#x25BC;</span>
+                </h3>
+                <ul class="category-list" id="listOtros">
+                    <li><label><input type="checkbox" name="categoria" value="Reglas y Escuadras" /> Reglas y
+                            Escuadras</label></li>
+                    <li><label><input type="checkbox" name="categoria" value="Papel y Cartones" /> Papel y
+                            Cartones</label></li>
+                </ul>
+            </section>
+        </aside>
+        <main class="main-content" tabindex="0">
+            <h1>Productos</h1>
+            <input type="text" id="searchProducts" placeholder="Buscar productos..." aria-label="Buscar productos"
+                autocomplete="off" />
+            <ul id="product-list" class="product-list" aria-live="polite" aria-relevant="additions removals"
+                role="list"></ul>
+        </main>
+    </div>
+
+    <script>
+        (() => {
+            const products = [
+                // FOAM
+                { name: "FOAM NEGRO 5MM", categories: ["Material para Maquetas"], price: 40, image: "" },
+                { name: "FOAM NEGRO 3MM", categories: ["Material para Maquetas"], price: 38, image: "" },
+                { name: "FOAM NEGRO 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM BLANCO 3MM", categories: ["Material para Maquetas"], price: 35, image: "" },
+                { name: "FOAM BLANCO 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM VERDE 5MM", categories: ["Material para Maquetas"], price: 40, image: "" },
+                { name: "FOAM VERDE 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM AZUL 5MM", categories: ["Material para Maquetas"], price: 42, image: "" },
+                { name: "FOAM AZUL 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM ROJO 5MM", categories: ["Material para Maquetas"], price: 42, image: "" },
+                { name: "FOAM ROJO 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM NARANJA 5MM", categories: ["Material para Maquetas"], price: 42, image: "" },
+                { name: "FOAM NARANJA 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM AMARILLO 5MM", categories: ["Material para Maquetas"], price: 42, image: "" },
+                { name: "FOAM AMARILLO 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM ROSADO 5MM", categories: ["Material para Maquetas"], price: 42, image: "" },
+                { name: "FOAM ROSADO 10MM", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "FOAM COLORES (ROJO, AZUL, VERDE) 5MM", categories: ["Material para Maquetas"], price: 45, image: "" },
+                { name: "FOAM COLORES (ROJO, AZUL, VERDE) 10MM", categories: ["Material para Maquetas"], price: 80, image: "" },
+                { name: "FOAM TRANSPARENTE 5MM", categories: ["Material para Maquetas"], price: 45, image: "" },
+                { name: "FOAM TRANSPARENTE 10MM", categories: ["Material para Maquetas"], price: 80, image: "" },
+
+                // Carton maqueta blanco
+                { name: "CARTON MAQUETA BLANCO 70X100 (1MM)", categories: ["Material para Maquetas"], price: 25, image: "" },
+                { name: "CARTON MAQUETA BLANCO 70X100 (1.5MM)", categories: ["Material para Maquetas"], price: 30, image: "" },
+                { name: "CARTON MAQUETA BLANCO 70X100 (2MM)", categories: ["Material para Maquetas"], price: 35, image: "" },
+
+                // Carton maqueta liner
+                { name: "CARTON MAQUETA LINER 70X100 (1MM)", categories: ["Material para Maquetas"], price: 25, image: "" },
+                { name: "CARTON MAQUETA LINER 70X100 (1.5MM)", categories: ["Material para Maquetas"], price: 30, image: "" },
+                { name: "CARTON MAQUETA LINER 70X100 (2MM)", categories: ["Material para Maquetas"], price: 35, image: "" },
+                { name: "CARTON MAQUETA LINER 70X100 (3MM)", categories: ["Material para Maquetas"], price: 45, image: "" },
+
+                // Carton pluma
+                { name: "CARTÓN PLUMA 5MM", categories: ["Material para Maquetas"], price: 30, image: "" },
+                { name: "CARTÓN PLUMA 10MM", categories: ["Material para Maquetas"], price: 55, image: "" },
+                { name: "CARTÓN PLUMA 20MM", categories: ["Material para Maquetas"], price: 90, image: "" },
+
+                // Maderas y balsas
+                { name: "PLANCHA DE CORCHO 60X90 (1MM)", categories: ["Material para Maquetas"], price: 45, image: "" },
+                { name: "BALSA CUADRADA (1MM X 1MM)", categories: ["Material para Maquetas"], price: 15, image: "" },
+                { name: "BALSA CUADRADA (2MM X 2MM)", categories: ["Material para Maquetas"], price: 20, image: "" },
+                { name: "BALSA CUADRADA (3MM X 3MM)", categories: ["Material para Maquetas"], price: 25, image: "" },
+                { name: "BALSA CUADRADA (4MM X 4MM)", categories: ["Material para Maquetas"], price: 30, image: "" },
+                { name: "BALSA CUADRADA (5MM X 5MM)", categories: ["Material para Maquetas"], price: 35, image: "" },
+                { name: "BALSA CUADRADA (6MM X 6MM)", categories: ["Material para Maquetas"], price: 40, image: "" },
+                { name: "BALSA CUADRADA (8MM X 8MM)", categories: ["Material para Maquetas"], price: 50, image: "" },
+                { name: "TABLA DE MADERA MDF 60X90X3MM", categories: ["Material para Maquetas"], price: 320, image: "" },
+                { name: "TABLA DE MADERA MDF 70X100X5MM", categories: ["Material para Maquetas"], price: 540, image: "" },
+                { name: "TABLA DE MADERA MDF 80X120X10MM", categories: ["Material para Maquetas"], price: 850, image: "" },
+
+                // Cartón ondulado
+                { name: "CARTÓN ONDULADO 70X100 (3MM)", categories: ["Papelería"], price: 40, image: "" },
+                { name: "CARTÓN ONDULADO 80X120 (5MM)", categories: ["Papelería"], price: 55, image: "" },
+                { name: "CARTÓN ONDULADO 90X130 (7MM)", categories: ["Papelería"], price: 70, image: "" },
+
+                // Papeles varios
+                { name: "PAPEL KRAFT 70X100 (100GR)", categories: ["Papelería"], price: 40, image: "" },
+                { name: "PAPEL KRAFT 80X120 (120GR)", categories: ["Papelería"], price: 50, image: "" },
+                { name: "PAPEL FOTOGRÁFICO 70X100 (150GR)", categories: ["Papelería"], price: 70, image: "" },
+                { name: "PAPEL FOTOGRÁFICO 80X120 (200GR)", categories: ["Papelería"], price: 80, image: "" },
+                { name: "PAPEL MATE 70X100 (120GR)", categories: ["Papelería"], price: 50, image: "" },
+                { name: "PAPEL MATE 80X120 (150GR)", categories: ["Papelería"], price: 55, image: "" },
+                { name: "Cartulina", categories: ["Papelería"], price: 40, image: "Imagenes/Cartulinas.webp" },
+
+                // Reglas y escuadras
+                { name: "REGLA \"T\" 60CM CON NÚMERO Y CON BISEL", categories: ["Reglas y Escuadras"], price: 50, image: "" },
+                { name: "REGLA \"T\" 70CM CON NÚMERO Y CON BISEL", categories: ["Reglas y Escuadras"], price: 70, image: "" },
+                { name: "REGLA \"T\" 80CM CON NÚMERO Y CON BISEL", categories: ["Reglas y Escuadras"], price: 75, image: "" },
+                { name: "REGLA \"T\" 90CM CON NÚMERO Y CON BISEL", categories: ["Reglas y Escuadras"], price: 80, image: "" },
+                { name: "ESCUADRA 15CM CON NÚMERO", categories: ["Reglas y Escuadras"], price: 25, image: "" },
+                { name: "ESCUADRA 15CM SIN NÚMERO", categories: ["Reglas y Escuadras"], price: 20, image: "" },
+                { name: "ESCUADRA 20CM CON NÚMERO", categories: ["Reglas y Escuadras"], price: 30, image: "" },
+                { name: "ESCUADRA 20CM SIN NÚMERO", categories: ["Reglas y Escuadras"], price: 28, image: "" },
+                { name: "ESCUADRA 25CM CON NÚMERO", categories: ["Reglas y Escuadras"], price: 32, image: "" },
+                { name: "ESCUADRA 25CM SIN NÚMERO", categories: ["Reglas y Escuadras"], price: 30, image: "" },
+                { name: "ESCUADRA 30CM CON NÚMERO", categories: ["Reglas y Escuadras"], price: 35, image: "" },
+                { name: "ESCUADRA 30CM SIN NÚMERO", categories: ["Reglas y Escuadras"], price: 33, image: "" },
+                { name: "REGLA METÁLICA 30 CM", categories: ["Reglas y Escuadras"], price: 50, image: "" },
+
+                // Utiles escolares
+                { name: "Lápiz FC Prof 9000 2B (x12)", categories: ["Lápices y Bolígrafos"], price: 60, image: "" },
+                { name: "Lápiz FC Prof 9000 2H (x12)", categories: ["Lápices y Bolígrafos"], price: 60, image: "" },
+                { name: "Colores Faber Castell", categories: ["Lápices y Bolígrafos"], price: 60, image: "Imagenes/ColoresFc2.webp" },
+                { name: "Bolígrafos punta fina y tinta Faber Castell", categories: ["Lápices y Bolígrafos"], price: 90, image: "Imagenes/Boligrafo punta fina FC.webp" },
+                { name: "Bolígrafos punta fina y tinta Pilot", categories: ["Lápices y Bolígrafos"], price: 90, image: "Imagenes/boligrafo pilot.webp" },
+                { name: "Bolígrafos punta fina y tinta artesco", categories: ["Lápices y Bolígrafos"], price: 90, image: "Imagenes/boligrafoartesco.webp"},
+                { name: "Témperas", categories: ["Pinturas"], price: 150, image: "Imagenes/temperas.webp" },
+                { name: "Acuarelas", categories: ["Pinturas"], price: 170, image: "Imagenes/acuarelas.webp" },
+                { name: "Plumones", categories: ["Pinturas"], price: 110, image: "Imagenes/plumones.webp" },
+                { name: "Resaltadores", categories: ["Marcadores y Resaltadores"], price: 80, image: "" },
+                { name: "Cinta masking", categories: ["Adhesivos y Útiles"], price: 40, image: "Imagenes/cintamasking.webp" },
+
+                // Adhesivos y útiles
+                { name: "Pegamento UHU 13 x 60ml (x12)", categories: ["Adhesivos y Útiles"], price: 90, image: "Imagenes/uhu.webp" },
+                { name: "Goma gruesa", categories: ["Adhesivos y Útiles"], price: 35, image: "Imagenes/gomasgruesas.webp" },
+                { name: "Goma delgada", categories: ["Adhesivos y Útiles"], price: 35, image: "Imagenes/gomasdelgadas.webp" },
+                { name: "Goma líquida", categories: ["Adhesivos y Útiles"], price: 35, image: "Imagenes/gomaliquida.webp" },
+                { name: "Gomas barra", categories: ["Adhesivos y Útiles"], price: 35, image: "Imagenes/gomabarra.webp" },
+                { name: "Barras de Silicona", categories: ["Adhesivos y Útiles"], price: 35, image: "Imagenes/barrassilicona.webp" },
+                { name: "Tijeras", categories: ["Adhesivos y Útiles"], price: 70, image: "Imagenes/tijeras.webp" },
+
+                // Papelería
+                { name: "PAPEL VEGETAL 96GR (FORMATO A4)", categories: ["Papelería"], price: 30, image: "Imagenes/papelvegetal.webp" },
+                { name: "PAPEL KRAFT 70X100 (100GR)", categories: ["Papelería"], price: 40, image: "Imagenes/papelkraft.webp" },
+
+                // Artículos de oficina
+                { name: "Clips", categories: ["Artículos de oficina"], price: 15, image: "Imagenes/clips.webp" },
+                { name: "Clips mariposas", categories: ["Artículos de oficina"], price: 15, image: "Imagenes/clipsmariposa.webp" },
+                { name: "Chinches", categories: ["Artículos de oficina"], price: 15, image: "Imagenes/chinches.webp" },
+                { name: "Tajadores", categories: ["Artículos de oficina"], price: 25, image: "Imagenes/tajador.webp" },
+                { name: "Corrector", categories: ["Artículos de oficina"], price: 25, image: "Imagenes/corrector.webp" },
+                { name: "Compas", categories: ["Arquitectura", "Artículos de oficina"], price: 180, image: "Imagenes/compases.webp" },
+
+                // Libros ejemplo
+                { name: "Cálculo I - Libro de arquitectura", categories: ["Arquitectura", "Libros"], price: 180, image: "" },
+                { name: "Introducción a la Ingeniería Civil", categories: ["Ing. Civil", "Libros"], price: 155, image: "" },
+                { name: "Manual de Enfermería Básica", categories: ["Enfermería", "Libros"], price: 90, image: "" },
+                { name: "Temas de Derecho Constitucional", categories: ["Derecho", "Libros"], price: 120, image: "" },
+                { name: "Fundamentos de Economía", categories: ["Economía", "Libros"], price: 130, image: "" }
+            ];
+
+            const productListEl = document.getElementById('product-list');
+            const categoryCheckboxes = Array.from(document.querySelectorAll('input[name="categoria"]'));
+            const categorySearchInput = document.getElementById('categorySearch');
+            const productSearchInput = document.getElementById('searchProducts');
+            const categoryGroups = document.querySelectorAll('.category-group');
+
+            function displayProducts(productsToShow) {
+                productListEl.innerHTML = '';
+                if (productsToShow.length === 0) {
+                    productListEl.innerHTML = '<li class="no-results">No hay productos para esta(s) categoría(s) o búsqueda.</li>';
+                    return;
+                }
+                const fragment = document.createDocumentFragment();
+                productsToShow.forEach(product => {
+                    const li = document.createElement('li');
+                    if (product.image) {
+                        const img = document.createElement('img');
+                        img.className = 'product-image';
+                        img.src = product.image;
+                        img.alt = product.name;
+                        li.appendChild(img);
+                    }
+                    const nameEl = document.createElement('div');
+                    nameEl.className = 'product-name';
+                    nameEl.textContent = product.name;
+                    li.appendChild(nameEl);
+                    const priceEl = document.createElement('div');
+                    priceEl.className = 'product-price';
+                    priceEl.textContent = `S/ ${product.price.toFixed(2)}`;
+                    li.appendChild(priceEl);
+                    fragment.appendChild(li);
+                });
+                productListEl.appendChild(fragment);
+            }
+
+            function getSelectedCategories() {
+                return categoryCheckboxes.filter(cb => cb.checked).map(cb => cb.value);
+            }
+
+            function filterProducts() {
+                const selectedCats = getSelectedCategories();
+                const productSearchTerm = productSearchInput.value.trim().toLowerCase();
+
+                let filtered = products;
+
+                if (selectedCats.length > 0) {
+                    filtered = filtered.filter(p => p.categories.some(cat => selectedCats.includes(cat)));
+                }
+                if (productSearchTerm) {
+                    filtered = filtered.filter(p => p.name.toLowerCase().includes(productSearchTerm));
+                }
+                displayProducts(filtered);
+            }
+
+            function filterCategories() {
+                const searchTerm = categorySearchInput.value.trim().toLowerCase();
+                categoryGroups.forEach(group => {
+                    const labels = group.querySelectorAll('label');
+                    let anyVisible = false;
+                    labels.forEach(label => {
+                        const text = label.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            label.style.display = 'flex';
+                            anyVisible = true;
+                        } else {
+                            label.style.display = 'none';
+                        }
+                    });
+                    group.style.display = anyVisible ? 'block' : 'none';
+                });
+            }
+
+            categoryGroups.forEach(group => {
+                const header = group.querySelector('h3');
+                const list = group.querySelector('.category-list');
+
+                header.addEventListener('click', () => {
+                    const isCollapsed = list.classList.toggle('collapsed');
+                    header.setAttribute('aria-expanded', !isCollapsed);
+                    header.querySelector('span').style.transform = isCollapsed ? 'rotate(-90deg)' : 'rotate(0deg)';
+                });
+                header.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        header.click();
+                    }
+                });
+            });
+
+            categoryCheckboxes.forEach(cb => cb.addEventListener('change', filterProducts));
+            productSearchInput.addEventListener('input', filterProducts);
+            categorySearchInput.addEventListener('input', () => {
+                filterCategories();
+            });
+
+            filterCategories();
+            displayProducts(products);
+        })();
+    </script>
+</body>
+</html>

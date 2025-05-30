@@ -1,0 +1,354 @@
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Studio &amp; Progetto - Inicio
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="inicio.css" rel="stylesheet" />
+    <link href="SP WHITE.ico" rel="icon" type="image/x-icon" />
+    <link href="productos.html" rel="canonical" />
+    <link href="productos.css" rel="stylesheet" />
+    <link href="ofertas.html" rel="canonical" />
+    <link href="ofertas.css" rel="stylesheet" />
+    <meta content="Studio &amp; Progetto" name="author" />
+    <meta content="Studio &amp; Progetto - Inicio" name="description" />
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 shadow-md">
+        <nav aria-label="Main navigation" class="container mx-auto flex flex-wrap items-center justify-between p-4">
+            <a class="text-2xl font-bold tracking-wide flex items-center gap-2" href="index.html">
+                <img alt="Logo Studio &amp; Progetto, stylized letters S and P intertwined in green and beige"
+                    class="rounded" height="40"
+                    src="https://storage.googleapis.com/a1aa/image/dc838739-6521-4620-0bef-89fd4a446fce.jpg"
+                    width="40" />
+                Studio &amp; Progetto
+            </a>
+            <button aria-label="Toggle menu" class="md:hidden text-3xl text-var(--color1) focus:outline-none"
+                id="menu-toggle">
+                <i class="fas fa-bars">
+                </i>
+            </button>
+            <ul class="hidden md:flex md:items-center md:gap-6 text-var(--color1) font-semibold" id="menu">
+                <li>
+                    <a class="hover:text-var(--color2)" href="index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="productos.html">
+                        Productos
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="ofertas.html">
+                        Ofertas
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="servicios.html">
+                        Servicios de Impresión y Fotocopiado
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="delivery.html">
+                        Delivery
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="carrito.html">
+                        Carrito
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="nosotros.html">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+                <li>
+                    <a class="hover:text-var(--color2)" href="login.html">
+                        Iniciar Sesión
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="WhatsApp Studio &amp; Progetto" class="text-green-600 hover:text-green-400 text-xl"
+                        href="https://wa.me/51939275406" rel="noopener" target="_blank">
+                        <i class="fab fa-whatsapp">
+                        </i>
+                    </a>
+                </li>
+                <li>
+                    <button aria-label="Toggle dark mode"
+                        class="ml-4 text-xl text-var(--color1) hover:text-var(--color2) focus:outline-none"
+                        id="dark-mode-toggle">
+                        <i class="fas fa-moon">
+                        </i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex-grow container mx-auto px-4 py-6">
+        <!-- Carousel -->
+        <section aria-label="Galería de imágenes animadas Studio &amp; Progetto"
+            class="relative max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg">
+            <div class="relative w-full h-64 sm:h-96" id="carousel">
+                <img alt="Materiales escolares de calidad en un escritorio con colores beige y verde, lápices, cuadernos y reglas"
+                    class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+                    data-index="0" height="400"
+                    src="https://storage.googleapis.com/a1aa/image/914f4b06-9790-4de8-71d8-a06858c6917c.jpg"
+                    width="1200" />
+                <img alt="Impresiones profesionales en Studio &amp; Progetto, impresora moderna imprimiendo documentos en tonos amarillos y verdes"
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                    data-index="1" height="400"
+                    src="https://storage.googleapis.com/a1aa/image/4310d3ba-240d-4b54-beb1-8233059ae9f8.jpg"
+                    width="1200" />
+                <img alt="Servicio de delivery rápido y seguro, caja de cartón con logo Studio &amp; Progetto y fondo verde claro"
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                    data-index="2" height="400"
+                    src="https://storage.googleapis.com/a1aa/image/b40faa1f-8be9-41ab-111d-867784c8970a.jpg"
+                    width="1200" />
+                <button aria-label="Imagen anterior" class="carousel-arrow absolute top-1/2 left-4 -translate-y-1/2"
+                    id="prevBtn">
+                    <i class="fas fa-chevron-left">
+                    </i>
+                </button>
+                <button aria-label="Imagen siguiente" class="carousel-arrow absolute top-1/2 right-4 -translate-y-1/2"
+                    id="nextBtn">
+                    <i class="fas fa-chevron-right">
+                    </i>
+                </button>
+            </div>
+        </section>
+        <!-- Productos más vendidos -->
+        <section class="mt-12">
+            <h2 class="text-3xl font-bold mb-6 text-center fadeInSlide">
+                Productos Más Vendidos
+            </h2>
+            <div aria-label="Productos más vendidos"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <a aria-describedby="desc-prod1"
+                    class="block bg-var(--color2) rounded-lg shadow-md p-4 hover:shadow-xl transition-shadow duration-300"
+                    href="productos.html#producto1">
+                    <img alt="Cuadernos premium con portada verde y beige, diseño elegante y resistente"
+                        class="w-full h-48 object-cover rounded-md mb-3" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/9799e541-2c08-4c26-c9e2-32bf8889380e.jpg"
+                        width="300" />
+                    <h3 class="font-semibold text-lg text-var(--color4)">
+                        Cuadernos Premium
+                    </h3>
+                    <p class="text-sm text-var(--color4)" id="desc-prod1">
+                        Cuadernos de alta calidad para estudiantes y profesionales.
+                    </p>
+                </a>
+                <a aria-describedby="desc-prod2"
+                    class="block bg-var(--color2) rounded-lg shadow-md p-4 hover:shadow-xl transition-shadow duration-300"
+                    href="productos.html#producto2">
+                    <img alt="Lápices de colores vibrantes en caja de madera, colores variados para dibujo y arte"
+                        class="w-full h-48 object-cover rounded-md mb-3" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/72e93f67-d488-4184-3703-58169c8db260.jpg"
+                        width="300" />
+                    <h3 class="font-semibold text-lg text-var(--color4)">
+                        Lápices de Colores
+                    </h3>
+                    <p class="text-sm text-var(--color4)" id="desc-prod2">
+                        Set de lápices de colores para artistas y estudiantes.
+                    </p>
+                </a>
+                <a aria-describedby="desc-prod3"
+                    class="block bg-var(--color2) rounded-lg shadow-md p-4 hover:shadow-xl transition-shadow duration-300"
+                    href="productos.html#producto3">
+                    <img alt="Impresiones de alta calidad en papel brillante, colores vivos y detalles nítidos"
+                        class="w-full h-48 object-cover rounded-md mb-3" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/8e696aaf-3bfd-4f0e-c08b-641329065d29.jpg"
+                        width="300" />
+                    <h3 class="font-semibold text-lg text-var(--color4)">
+                        Impresiones de Alta Calidad
+                    </h3>
+                    <p class="text-sm text-var(--color4)" id="desc-prod3">
+                        Servicio profesional de impresión para documentos y fotos.
+                    </p>
+                </a>
+                <a aria-describedby="desc-prod4"
+                    class="block bg-var(--color2) rounded-lg shadow-md p-4 hover:shadow-xl transition-shadow duration-300"
+                    href="productos.html#producto4">
+                    <img alt="Mochilas resistentes en tonos verdes, con múltiples compartimentos y diseño ergonómico"
+                        class="w-full h-48 object-cover rounded-md mb-3" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/80794596-b3cd-4cda-38f5-dc87f545f070.jpg"
+                        width="300" />
+                    <h3 class="font-semibold text-lg text-var(--color2)">
+                        Mochilas Resistentes
+                    </h3>
+                    <p class="text-sm text-var(--color2)" id="desc-prod4">
+                        Mochilas duraderas para estudiantes y profesionales.
+                    </p>
+                </a>
+            </div>
+        </section>
+        <!-- Proveedores -->
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold mb-6 text-center fadeInSlide">
+                Nuestros Proveedores
+            </h2>
+            <div aria-label="Logos de proveedores" class="flex justify-center gap-8 flex-wrap items-center"
+                id="proveedores">
+                <img alt="Logo del proveedor 1, diseño abstracto en tonos beige y verde"
+                    class="w-24 h-24 object-contain animate-spin-slow" height="100"
+                    src="https://storage.googleapis.com/a1aa/image/40cc982f-6723-422f-2ac8-775b811a9fa5.jpg"
+                    width="100" />
+                <img alt="Logo del proveedor 2, icono de lápiz y regla cruzados en amarillo y verde"
+                    class="w-24 h-24 object-contain animate-spin-slow" height="100"
+                    src="https://storage.googleapis.com/a1aa/image/5b11f286-3c83-452c-b6c6-33ef824e3aab.jpg"
+                    width="100" />
+                <img alt="Logo del proveedor 3, letras estilizadas en verde claro y beige"
+                    class="w-24 h-24 object-contain animate-spin-slow" height="100"
+                    src="https://storage.googleapis.com/a1aa/image/6ea4bd6d-cee3-42ea-dd41-c8606de8985c.jpg"
+                    width="100" />
+                <img alt="Logo del proveedor 4, icono de impresora en verde oscuro y beige"
+                    class="w-24 h-24 object-contain animate-spin-slow" height="100"
+                    src="https://storage.googleapis.com/a1aa/image/1a9860c6-4734-4473-a1d0-6a2afe64b162.jpg"
+                    width="100" />
+            </div>
+        </section>
+        <!-- Ubicación Google Maps -->
+        <section class="mt-16 max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center fadeInSlide">
+                Encuéntranos
+            </h2>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-79.01234567890123!3d-8.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3f1234567890%3A0x123456789abcdef!2sCalle%20Las%20Gemas%20626%2C%20Urb.%20Santa%20In%C3%A9s%2C%20Trujillo%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1680000000000!5m2!1ses!2spe"
+                    style="border:0;" title="Ubicación Studio &amp; Progetto en Google Maps" width="100%">
+                </iframe>
+            </div>
+            <div class="text-center mt-4">
+                <a class="btn-primary inline-block px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl"
+                    href="https://www.google.com/maps/dir/?api=1&amp;destination=Calle+Las+Gemas+626,+Urb.+Santa+In%C3%A9s,+Trujillo-Per%C3%BA"
+                    rel="noopener" target="_blank">
+                    Cómo llegar
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-var(--color4) text-var(--color1) py-6 mt-12">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 gap-4">
+            <p class="text-center md:text-left text-sm md:text-base">
+                Dirección: Calle Las Gemas 626, Urb. Santa Inés, Trujillo-Perú | Teléfono:
+                <a class="underline hover:text-var(--color2)" href="tel:+51939275406">
+                    +51939275406
+                </a>
+                |
+                Email:
+                <a class="underline hover:text-var(--color2)" href="mailto:studioprogettosac@gmail.com">
+                    studioprogettosac@gmail.com
+                </a>
+            </p>
+            <p class="text-center md:text-right text-sm md:text-base">
+                © 2024 Studio &amp; Progetto. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+    <script>
+        // Dark mode toggle
+        const darkToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const icon = darkToggle.querySelector('i');
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        darkToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            if (body.classList.contains('dark')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Carousel logic
+        const images = document.querySelectorAll('#carousel img');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        const totalImages = images.length;
+
+        function showImage(index) {
+            images.forEach((img) => {
+                img.style.opacity = '0';
+                img.style.zIndex = '0';
+            });
+            images[index].style.opacity = '1';
+            images[index].style.zIndex = '10';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            showImage(currentIndex);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextImage();
+            resetInterval();
+        });
+        prevBtn.addEventListener('click', () => {
+            prevImage();
+            resetInterval();
+        });
+
+        showImage(currentIndex);
+
+        let carouselInterval = setInterval(nextImage, 6000);
+
+        function resetInterval() {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextImage, 6000);
+        }
+
+        // Animate spin slow for providers logos
+        const style = document.createElement('style');
+        style.textContent = `
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+    `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

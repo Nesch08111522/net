@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio & Progetto - Inicio</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Studio & Progetto - Delivery</title>
+    <link rel="stylesheet" href="delivery.css">
     <link rel="stylesheet" href="dark-mode.css">
+   <link href="SP WHITE.ico" rel="icon" type="image/x-icon"/>
+    <script src="main.js"></script> 
+    <script src="dark-mode.js"></script>
+    <script src="fullscreen.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="main.js"></script>
-    <link rel="icon" href="SP WHITE.ico" type="image/x-icon">
-
 </head>
-
 <body>
     <div class="pre-carga">
     <div class="pre-carga-contenido">
@@ -33,7 +31,7 @@
     setTimeout(mostrarContenido, 2000); // Mostrar contenido después de 2 segundos
     window.addEventListener('load', mostrarContenido);
   </script>
-    <!-- Barra de navegación -->
+   <!-- Barra de navegación -->
     <header class="header">
     <div class="container">
         <a href="index.html" class="logo">
@@ -65,216 +63,165 @@
 </header>
 
 
-    <!-- Hero Slider -->
-<section class="hero">
-    <div class="hero-slider">
-        <div class="slide active">
-            <img src="Inicio.webp" alt="Studio & Progetto">
-            <div class="slide-content">
-                <h1 class="animate__animated animate__fadeInDown">Todo en útiles escolares y de oficina</h1>
-                <div class="animate__animated animate__fadeInUp">
-                    <p><strong>BIENVENIDO A STUDIO & PROGETTO</strong></p>
-                    <p><strong>¡Explora nuestras secciones y haz de cada compra una inspiración!</strong></p>
+    <!-- Servicio de delivery -->
+    <section class="delivery-section">
+        <div class="container">
+            <h1>Servicio de Delivery</h1>
+            <p class="delivery-description">Llevamos tus productos hasta la puerta de tu casa, oficina o institución educativa. Rápido, seguro y confiable.</p>
+            
+            <div class="delivery-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Zonas de cobertura</h3>
+                    <p>Servicio disponible en todo Trujillo y distritos aledaños.</p>
                 </div>
-                <a href="productos.html" class="btn animate__animated animate__fadeInUp">Ver productos</a>
+                
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horarios</h3>
+                    <p>Lunes a Sábado de 9am a 8pm.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Costos</h3>
+                    <p>Varían según la zona y el monto de compra.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="slide">
-            <img src="utilesEscolares.webp" alt="Copias e impresión">
-            <div class="slide-content">
-                <h1>Servicios de copias e impresión</h1>
-                <p>Rápidos, económicos y de alta calidad</p>
-                <a href="copias-impresion.html" class="btn">Más información</a>
-            </div>
-        </div>
-        
-        <div class="slide">
-            <img src="inicio1.webp" alt="Delivery">
-            <div class="slide-content">
-                <h1>Servicio de delivery</h1>
-                <p>Recibe tus productos donde lo necesites</p>
-                <a href="delivery.html" class="btn">Conoce más</a>
-            </div>
-        </div>
-
-        <div class="slider-controls">
-            <button class="prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-</section>
-
-    <!-- Productos destacados -->
-    <section class="featured-products">
-    <div class="container">
-        <h2>Productos más vendidos</h2>
-        <div class="product-grid" aria-label="Productos destacados">
-            <!-- Cuadernos universitarios -->
-            <div class="product-card" tabindex="0" aria-label="Cuadernos universitarios">
-                <div class="product-card-front">
-                    <img src="cuadernosuniversitarios.webp" alt="Cuadernos universitarios" class="product-image" />
-                    <div class="product-info">
-                        <h3>Cuadernos universitarios</h3>
-                        <p>S/12.00</p>
-                        <a href="productos.html" class="btn">Ver más</a>
+            
+            <div class="delivery-content">
+                <div class="delivery-form">
+                    <h2>Solicitar Delivery</h2>
+                    
+                    <div class="form-group">
+                        <label>Nombre completo:</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Dirección exacta:</label>
+                        <textarea rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Referencia:</label>
+                        <textarea rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Zona:</label>
+                        <select>
+                            <option>Centro de Trujillo</option>
+                            <option>La Esperanza</option>
+                            <option>El Porvenir</option>
+                            <option>Florencia de Mora</option>
+                            <option>Victor Larco</option>
+                            <option>Moche</option>
+                            <option>Huanchaco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Productos a entregar:</label>
+                        <textarea rows="4" required></textarea>
+                        <small>Puedes copiar los productos de tu <a href="carrito.html">carrito de compras</a></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Fecha de entrega:</label>
+                        <input type="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Hora aproximada:</label>
+                        <input type="time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Método de pago:</label>
+                        <select>
+                            <option>Efectivo al recibir</option>
+                            <option>Transferencia bancaria</option>
+                            <option>Yape / Plin</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Instrucciones adicionales:</label>
+                        <textarea rows="3"></textarea>
+                    </div>
+                    
+                    <button class="btn submit-delivery">Enviar solicitud</button>
+                </div>
+                
+                <div class="delivery-pricing">
+                    <h2>Tarifas de delivery</h2>
+                    
+                    <div class="pricing-table">
+                        <table>
+                            <tr>
+                                <th>Zona</th>
+                                <th>Costo mínimo</th>
+                                <th>Gratis desde</th>
+                            </tr>
+                            <tr>
+                                <td>Centro de Trujillo</td>
+                                <td>S/5.00</td>
+                                <td>S/50.00</td>
+                            </tr>
+                            <tr>
+                                <td>La Esperanza</td>
+                                <td>S/7.00</td>
+                                <td>S/70.00</td>
+                            </tr>
+                            <tr>
+                                <td>El Porvenir</td>
+                                <td>S/8.00</td>
+                                <td>S/80.00</td>
+                            </tr>
+                            <tr>
+                                <td>Florencia de Mora</td>
+                                <td>S/8.00</td>
+                                <td>S/80.00</td>
+                            </tr>
+                            <tr>
+                                <td>Victor Larco</td>
+                                <td>S/10.00</td>
+                                <td>S/100.00</td>
+                            </tr>
+                            <tr>
+                                <td>Moche</td>
+                                <td>S/12.00</td>
+                                <td>S/120.00</td>
+                            </tr>
+                            <tr>
+                                <td>Huanchaco</td>
+                                <td>S/15.00</td>
+                                <td>S/150.00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="delivery-terms">
+                        <h3>Términos y condiciones:</h3>
+                        <ul>
+                            <li>El tiempo de entrega varía según la zona (30min - 2 horas)</li>
+                            <li>Para pedidos urgentes, consultar disponibilidad</li>
+                            <li>Se requiere confirmación del pedido antes del envío</li>
+                            <li>El pago se realiza al momento de recibir los productos</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="product-card-back">
-                    <h3 style="color: white" >Cuadernos universitarios</h3>
-                    <p style="color: white" >Cuadernos de alta calidad con hojas lisas y rayadas, ideal para apuntes y proyectos universitarios. Disponible en varios colores.</p>
-                </div>
-            </div>
-            
-            <!-- Pack de lapiceros -->
-            <div class="product-card" tabindex="0" aria-label="Pack de lapiceros">
-                <div class="product-card-front">
-                    <img src="lapiceros.webp" alt="Pack de lapiceros" class="product-image" />
-                    <div class="product-info">
-                        <h3>Pack de lapiceros</h3>
-                        <p>S/8.50</p>
-                        <a href="productos.html" class="btn">Ver más</a>
-                    </div>
-                </div>
-                <div class="product-card-back">
-                    <h3 style="color: white">Pack de lapiceros</h3>
-                    <p style="color: white" >Set de 12 lapiceros de tinta suave y secado rápido, ergonómicos para largas sesiones de escritura.</p>
-                </div>
-            </div>
-            
-            <!-- Carpetas A4 -->
-            <div class="product-card" tabindex="0" aria-label="Carpetas A4">
-                <div class="product-card-front">
-                    <img src="carpetas.webp" alt="Carpetas A4" class="product-image" />
-                    <div class="product-info">
-                        <h3>Carpetas A4</h3>
-                        <p>S/15.00</p>
-                        <a href="productos.html" class="btn">Ver más</a>
-                    </div>
-                </div>
-                <div class="product-card-back">
-                    <h3 style="color: white" >Carpetas A4</h3>
-                    <p style="color: white" >Carpetas organizadoras con separadores y bolsillos internos, perfectas para documentos importantes y trabajos universitarios.</p>
-                </div>
-            </div>
-            
-        
-        <div class="text-center">
-            <a href="productos.html" class="btn btn-large">Ver todos los productos</a>
-        </div>
-    </div>
-</section>
-
-        
-    <!-- Proveedores -->
-   
-<section class="suppliers">
-    <div class="container">
-        <h2>Nuestros Proveedores</h2>
-        <div class="suppliers-carousel">
-            <div class="suppliers-track">
-                <div class="supplier-item">
-                    <img src="fabercastel.webp" alt="Faber-Castell">
-                </div>
-                <div class="supplier-item">
-                    <img src="artesco.webp" alt="Artesco">
-                </div>
-                <div class="supplier-item">
-                    <img src="vinifan.webp" alt="Vinifan">
-                </div>
-                <div class="supplier-item">
-                    <img src="layconsa.webp" alt="Layconsa">
-                </div>
-                <div class="supplier-item">
-                    <img src="ove.webp" alt="OVE">
-                </div>
-                <!-- Duplicados para efecto de carrusel infinito -->
-                <div class="supplier-item">
-                    <img src="fabercastel.webp" alt="Faber-Castell">
-                </div>
-                <div class="supplier-item">
-                    <img src="artesco.webp" alt="Artesco">
-                </div>
-                <div class="supplier-item">
-                    <img src="vinifan.webp" alt="Vinifan">
-                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-
-    <!-- Ubicación -->
-    <section class="location-map-section">
-    <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">Visítanos</h2>
-        
-        <div class="map-container">
-            <div class="map-frame">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-79.01234567890123!3d-8.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3f1234567890%3A0x123456789abcdef!2sCalle%20Las%20Gemas%20626%2C%20Urb.%20Santa%20In%C3%A9s%2C%20Trujillo%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1680000000000!5m2!1ses!2spe" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    class="google-map">
-                </iframe>
-            </div>
-            
-            <div class="map-info">
-                <p><i class="fas fa-map-marker-alt"></i> Calle Las Gemas 626, Urb. Santa Inés, Trujillo-Perú</p>
-                <p><i class="fas fa-phone"></i> +51 939275406</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado, 8am - 9pm</p>
-                
-                <a href="https://maps.google.com" target="_blank" class="btn map-btn">
-                    <i class="fas fa-directions"></i> Cómo llegar
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Formulario de contacto -->
-   <section class="contact-section">
-    <div class="container">
-        <h2 class="contact-title">Contáctanos</h2>
-        <div class="form-3d-container">
-            <form id="contactForm" class="form-3d" action="mailto:studioprogettosac@gmail.com" method="post" enctype="text/plain">
-                <div class="form-group floating">
-                    <input type="text" name="name" id="name" required>
-                    <label for="name">Nombre completo</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <div class="form-group floating">
-                    <input type="email" name="email" id="email" required>
-                    <label for="email">Correo electrónico</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <div class="form-group floating">
-                    <input type="tel" name="phone" id="phone" required>
-                    <label for="phone">Número de teléfono</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <div class="form-group floating">
-                    <textarea name="message" id="message" required></textarea>
-                    <label for="message">Descripción de tu consulta</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <button type="submit" class="btn-3d">
-                    <span class="btn-text">Enviar mensaje</span>
-                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
-
-    <!-- WhatsApp flotante -->
+     <!-- WhatsApp flotante -->
     <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -352,8 +299,9 @@
     });
 </script>
 
+    <div id="footer-trigger"></div>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-section">

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio & Progetto - Inicio</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Studio & Progetto - Copias e Impresión</title>
+    <link rel="stylesheet" href="copias-impresion.css">
     <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="index.css">
+     <link href="SP WHITE.ico" rel="icon" type="image/x-icon"/>
+    <script src="main.js"></script> 
+    <script src="dark-mode.js"></script>
+    <script src="fullscreen.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="main.js"></script>
-    <link rel="icon" href="SP WHITE.ico" type="image/x-icon">
-
 </head>
-
 <body>
     <div class="pre-carga">
     <div class="pre-carga-contenido">
@@ -65,214 +64,211 @@
 </header>
 
 
-    <!-- Hero Slider -->
-<section class="hero">
-    <div class="hero-slider">
-        <div class="slide active">
-            <img src="Inicio.webp" alt="Studio & Progetto">
-            <div class="slide-content">
-                <h1 class="animate__animated animate__fadeInDown">Todo en útiles escolares y de oficina</h1>
-                <div class="animate__animated animate__fadeInUp">
-                    <p><strong>BIENVENIDO A STUDIO & PROGETTO</strong></p>
-                    <p><strong>¡Explora nuestras secciones y haz de cada compra una inspiración!</strong></p>
+    <!-- Servicios de copias e impresión -->
+    <section class="printing-services">
+        <div class="container">
+            <h1>Servicios de Copias e Impresión</h1>
+            <p class="service-description">Ofrecemos servicios de alta calidad para todas tus necesidades de impresión, copiado y escaneo. Trabajamos con diversos formatos y tipos de papel.</p>
+            
+            <div class="service-options">
+                <div class="service-card" id="printOption">
+                    <i class="fas fa-print"></i>
+                    <h3>Impresión</h3>
+                    <p>Imprime tus documentos con la mejor calidad</p>
                 </div>
-                <a href="productos.html" class="btn animate__animated animate__fadeInUp">Ver productos</a>
+                
+                <div class="service-card" id="copyOption">
+                    <i class="fas fa-copy"></i>
+                    <h3>Copias</h3>
+                    <p>Copias rápidas y económicas</p>
+                </div>
+                
+                <div class="service-card" id="scanOption">
+                    <i class="fas fa-scanner"></i>
+                    <h3>Escaneo</h3>
+                    <p>Digitaliza tus documentos</p>
+                </div>
             </div>
-        </div>
-
-        <div class="slide">
-            <img src="utilesEscolares.webp" alt="Copias e impresión">
-            <div class="slide-content">
-                <h1>Servicios de copias e impresión</h1>
-                <p>Rápidos, económicos y de alta calidad</p>
-                <a href="copias-impresion.html" class="btn">Más información</a>
-            </div>
-        </div>
-        
-        <div class="slide">
-            <img src="inicio1.webp" alt="Delivery">
-            <div class="slide-content">
-                <h1>Servicio de delivery</h1>
-                <p>Recibe tus productos donde lo necesites</p>
-                <a href="delivery.html" class="btn">Conoce más</a>
-            </div>
-        </div>
-
-        <div class="slider-controls">
-            <button class="prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-</section>
-
-    <!-- Productos destacados -->
-    <section class="featured-products">
-    <div class="container">
-        <h2>Productos más vendidos</h2>
-        <div class="product-grid" aria-label="Productos destacados">
-            <!-- Cuadernos universitarios -->
-            <div class="product-card" tabindex="0" aria-label="Cuadernos universitarios">
-                <div class="product-card-front">
-                    <img src="cuadernosuniversitarios.webp" alt="Cuadernos universitarios" class="product-image" />
-                    <div class="product-info">
-                        <h3>Cuadernos universitarios</h3>
-                        <p>S/12.00</p>
-                        <a href="productos.html" class="btn">Ver más</a>
+            
+            <!-- Formulario de impresión -->
+            <div class="printing-form" id="printingForm">
+                <h2><i class="fas fa-print"></i> Solicitud de Impresión</h2>
+                
+                <div class="form-step active" id="step1">
+                    <h3>1. Sube tus archivos</h3>
+                    <div class="file-upload">
+                        <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.ppt,.pptx,.xls,.xlsx">
+                        <label for="fileInput" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Seleccionar archivos</span>
+                        </label>
+                        <div class="file-list" id="fileList">
+                            <p>No hay archivos seleccionados</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button class="btn next-step" data-next="step2">Siguiente</button>
                     </div>
                 </div>
-                <div class="product-card-back">
-                    <h3 style="color: white" >Cuadernos universitarios</h3>
-                    <p style="color: white" >Cuadernos de alta calidad con hojas lisas y rayadas, ideal para apuntes y proyectos universitarios. Disponible en varios colores.</p>
-                </div>
-            </div>
-            
-            <!-- Pack de lapiceros -->
-            <div class="product-card" tabindex="0" aria-label="Pack de lapiceros">
-                <div class="product-card-front">
-                    <img src="lapiceros.webp" alt="Pack de lapiceros" class="product-image" />
-                    <div class="product-info">
-                        <h3>Pack de lapiceros</h3>
-                        <p>S/8.50</p>
-                        <a href="productos.html" class="btn">Ver más</a>
+                
+                <div class="form-step" id="step2">
+                    <h3>2. Configuración de impresión</h3>
+                    
+                    <div class="form-group">
+                        <label>Tipo de papel:</label>
+                        <select>
+                            <option>Bond 75g (Estándar)</option>
+                            <option>Bond 90g (Premium)</option>
+                            <option>Couche mate 150g</option>
+                            <option>Couche brillante 150g</option>
+                            <option>Autoadhesivo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Color:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="color" value="bw" checked>
+                                <span>Blanco y negro</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="color" value="color">
+                                <span>Color</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tamaño:</label>
+                        <select>
+                            <option>A4 (21cm x 29.7cm)</option>
+                            <option>A3 (29.7cm x 42cm)</option>
+                            <option>Carta (21.6cm x 27.9cm)</option>
+                            <option>Oficio (21.6cm x 33cm)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Orientación:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="orientation" value="portrait" checked>
+                                <span>Vertical</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="orientation" value="landscape">
+                                <span>Horizontal</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cantidad por archivo:</label>
+                        <input type="number" min="1" value="1">
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button class="btn prev-step" data-prev="step1">Anterior</button>
+                        <button class="btn next-step" data-next="step3">Siguiente</button>
                     </div>
                 </div>
-                <div class="product-card-back">
-                    <h3 style="color: white">Pack de lapiceros</h3>
-                    <p style="color: white" >Set de 12 lapiceros de tinta suave y secado rápido, ergonómicos para largas sesiones de escritura.</p>
-                </div>
-            </div>
-            
-            <!-- Carpetas A4 -->
-            <div class="product-card" tabindex="0" aria-label="Carpetas A4">
-                <div class="product-card-front">
-                    <img src="carpetas.webp" alt="Carpetas A4" class="product-image" />
-                    <div class="product-info">
-                        <h3>Carpetas A4</h3>
-                        <p>S/15.00</p>
-                        <a href="productos.html" class="btn">Ver más</a>
+                
+                <div class="form-step" id="step3">
+                    <h3>3. Información de contacto</h3>
+                    
+                    <div class="form-group">
+                        <label>Nombre completo:</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Correo electrónico:</label>
+                        <input type="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Instrucciones adicionales:</label>
+                        <textarea rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Método de entrega:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="delivery" value="pickup" checked>
+                                <span>Recojo en tienda</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="delivery" value="delivery">
+                                <span>Delivery (costo adicional)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button class="btn prev-step" data-prev="step2">Anterior</button>
+                        <button class="btn submit-printing">Enviar solicitud</button>
                     </div>
                 </div>
-                <div class="product-card-back">
-                    <h3 style="color: white" >Carpetas A4</h3>
-                    <p style="color: white" >Carpetas organizadoras con separadores y bolsillos internos, perfectas para documentos importantes y trabajos universitarios.</p>
-                </div>
             </div>
             
-        
-        <div class="text-center">
-            <a href="productos.html" class="btn btn-large">Ver todos los productos</a>
-        </div>
-    </div>
-</section>
-
-        
-    <!-- Proveedores -->
-   
-<section class="suppliers">
-    <div class="container">
-        <h2>Nuestros Proveedores</h2>
-        <div class="suppliers-carousel">
-            <div class="suppliers-track">
-                <div class="supplier-item">
-                    <img src="fabercastel.webp" alt="Faber-Castell">
+            <!-- Mensaje para copias y escaneo -->
+            <div class="service-message" id="serviceMessage">
+                <h2>Para servicios de copias o escaneo</h2>
+                <p>Visita nuestro local con los documentos que deseas copiar o escanear. Nuestro personal te atenderá de inmediato.</p>
+                
+                <div class="pricing-table">
+                    <h3>Precios de copias:</h3>
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Blanco y negro</th>
+                            <th>Color</th>
+                        </tr>
+                        <tr>
+                            <td>A4</td>
+                            <td>S/0.30</td>
+                            <td>S/1.50</td>
+                        </tr>
+                        <tr>
+                            <td>A3</td>
+                            <td>S/0.50</td>
+                            <td>S/2.50</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Precios de escaneo:</h3>
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Precio por hoja</th>
+                        </tr>
+                        <tr>
+                            <td>A4</td>
+                            <td>S/0.50</td>
+                        </tr>
+                        <tr>
+                            <td>A3</td>
+                            <td>S/1.00</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="supplier-item">
-                    <img src="artesco.webp" alt="Artesco">
-                </div>
-                <div class="supplier-item">
-                    <img src="vinifan.webp" alt="Vinifan">
-                </div>
-                <div class="supplier-item">
-                    <img src="layconsa.webp" alt="Layconsa">
-                </div>
-                <div class="supplier-item">
-                    <img src="ove.webp" alt="OVE">
-                </div>
-                <!-- Duplicados para efecto de carrusel infinito -->
-                <div class="supplier-item">
-                    <img src="fabercastel.webp" alt="Faber-Castell">
-                </div>
-                <div class="supplier-item">
-                    <img src="artesco.webp" alt="Artesco">
-                </div>
-                <div class="supplier-item">
-                    <img src="vinifan.webp" alt="Vinifan">
+                
+                <div class="location-info">
+                    <h3>Visítanos en:</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Las Gemas 626, Urb. Santa Inés, Trujillo-Perú</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn">Ver en Google Maps</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
-
-    <!-- Ubicación -->
-    <section class="location-map-section">
-    <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">Visítanos</h2>
-        
-        <div class="map-container">
-            <div class="map-frame">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-79.01234567890123!3d-8.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3f1234567890%3A0x123456789abcdef!2sCalle%20Las%20Gemas%20626%2C%20Urb.%20Santa%20In%C3%A9s%2C%20Trujillo%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1680000000000!5m2!1ses!2spe" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    class="google-map">
-                </iframe>
-            </div>
-            
-            <div class="map-info">
-                <p><i class="fas fa-map-marker-alt"></i> Calle Las Gemas 626, Urb. Santa Inés, Trujillo-Perú</p>
-                <p><i class="fas fa-phone"></i> +51 939275406</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado, 8am - 9pm</p>
-                
-                <a href="https://maps.google.com" target="_blank" class="btn map-btn">
-                    <i class="fas fa-directions"></i> Cómo llegar
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Formulario de contacto -->
-   <section class="contact-section">
-    <div class="container">
-        <h2 class="contact-title">Contáctanos</h2>
-        <div class="form-3d-container">
-            <form id="contactForm" class="form-3d" action="mailto:studioprogettosac@gmail.com" method="post" enctype="text/plain">
-                <div class="form-group floating">
-                    <input type="text" name="name" id="name" required>
-                    <label for="name">Nombre completo</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <div class="form-group floating">
-                    <input type="email" name="email" id="email" required>
-                    <label for="email">Correo electrónico</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <div class="form-group floating">
-                    <input type="tel" name="phone" id="phone" required>
-                    <label for="phone">Número de teléfono</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <div class="form-group floating">
-                    <textarea name="message" id="message" required></textarea>
-                    <label for="message">Descripción de tu consulta</label>
-                    <div class="highlight"></div>
-                </div>
-                
-                <button type="submit" class="btn-3d">
-                    <span class="btn-text">Enviar mensaje</span>
-                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- WhatsApp flotante -->
     <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
@@ -352,8 +348,9 @@
     });
 </script>
 
+    <div id="footer-trigger"></div>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-section">

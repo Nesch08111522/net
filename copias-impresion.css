@@ -1,0 +1,995 @@
+:root {
+  --color1: #e6ddcc; /* Color claro */
+  --color2: #eed391; /* Color claro */
+  --color3: #85a27a; /* Color primario */
+  --color4: #436957; /* Color secundario */
+
+  --primary-color: var(--color3);
+  --secondary-color: var(--color4);
+  --secondary-color-rgb: 67, 105, 87; /* RGB de --color4 */
+  --accent-color-rgb: 238, 211, 145; /* RGB de --color2 */
+  --dark-color: #2c3e2f; /* Color de fondo oscuro (verde olivo oscuro) */
+  --light-text: #fff; /* Texto claro */
+  --dark-text: #d9d9d9; /* Texto claro en modo oscuro */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Pre-carga */
+ .pre-carga {
+      position: fixed; /* Para que se mantenga fijo en la pantalla */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0; /* Color de fondo durante la carga */
+      display: flex; /* Para centrar el contenido */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+      z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+      opacity: 1; /* Inicialmente opaca */
+      transition: opacity 0.5s ease; /* Transición suave para la desaparición */
+    }
+
+    .pre-carga-contenido {
+      text-align: center;
+    }
+
+    .logo {
+    display: flex; /* This is good for aligning image and text */
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--light-color); /* Ensures text color is light */
+    /* Add this for explicit control over flex item shrinking */
+    flex-shrink: 0; 
+}
+
+.logo span {
+    /* Prevents the text from wrapping onto a new line */
+    white-space: nowrap; 
+}
+
+    .nombre-pagina {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .pre-carga.desaparecer {
+      opacity: 0;
+    }
+
+    /* WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+/* Pre-carga */
+.pre-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.pre-carga.desaparecer {
+    opacity: 0;
+}
+
+.pre-carga-contenido {
+    text-align: center;
+}
+
+.pre-carga .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nombre-pagina {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--light-color);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.logo img {
+    transition: var(--transition);
+}
+
+.logo:hover img {
+    transform: rotate(10deg);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar a {
+    color: var(--primary-color);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+.navbar a.active {
+    color: var(--accent-color);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.nav-icon:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle {
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.dark-mode-toggle:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Servicios de impresión */
+.printing-services {
+    padding: 60px 0;
+}
+
+.printing-services h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.service-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+}
+
+.service-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Formulario de impresión */
+/* copias-impresion.css */
+
+/* --- Sección de Servicios --- */
+.printing-services {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--background-color); /* Usar variable para compatibilidad con dark mode */
+    color: var(--text-color); /* Usar variable para compatibilidad con dark mode */
+}
+
+.printing-services h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.printing-services .service-description {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+    color: var(--text-light-color);
+}
+
+.service-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.service-card {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.service-card i {
+    font-size: 3.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+}
+
+.service-card p {
+    font-size: 1em;
+    color: var(--text-light-color);
+    line-height: 1.5;
+}
+
+/* --- Formularios y Mensajes de Servicio --- */
+.printing-form,
+.service-message {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 40px;
+    margin: 0 auto 60px;
+    max-width: 900px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.printing-form h2,
+.service-message h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.printing-form h2 i,
+.service-message h2 i {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+}
+
+/* Pasos del formulario */
+.form-step {
+    display: none;
+    padding: 20px 0;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-step h3 {
+    font-size: 1.8em;
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--input-background-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Asegura que padding no aumente el ancho total */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(var(--secondary-rgb), 0.2);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Grupos de radio */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0; /* Anula el margin-bottom del label general */
+    color: var(--text-color);
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+    accent-color: var(--secondary-color); /* Color del radio button */
+}
+
+/* Carga de archivos */
+.file-upload {
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    background-color: var(--input-background-color);
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.file-upload:hover {
+    border-color: var(--secondary-color);
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload .upload-btn {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.file-upload .upload-btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+.file-upload .upload-btn i {
+    font-size: 1.2em;
+}
+
+.file-list {
+    margin-top: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.file-list p {
+    color: var(--text-light-color);
+    font-style: italic;
+}
+
+.file-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-list li {
+    background-color: var(--light-background-color);
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 0.95em;
+    border: 1px solid var(--border-color);
+}
+
+.file-list li .remove-file {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: color 0.2s ease;
+}
+
+.file-list li .remove-file:hover {
+    color: var(--danger-hover-color);
+}
+
+/* Navegación del formulario (botones Siguiente/Anterior) */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn.prev-step {
+    background-color: var(--secondary-color);
+}
+
+.btn.prev-step:hover {
+    background-color: var(--secondary-hover-color);
+}
+
+.btn.submit-printing {
+    background-color: var(--accent-color);
+}
+
+.btn.submit-printing:hover {
+    background-color: var(--accent-hover-color);
+}
+
+/* Tablas de precios */
+.pricing-table {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pricing-table h3 {
+    font-size: 1.5em;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--light-background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--table-shadow);
+}
+
+.pricing-table th,
+.pricing-table td {
+    padding: 15px;
+    border: 1px solid var(--table-border-color);
+    text-align: left;
+    color: var(--text-color);
+}
+
+.pricing-table th {
+    background-color: var(--table-header-background);
+    color: var(--table-header-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95em;
+}
+
+.pricing-table tr:nth-child(even) {
+    background-color: var(--table-even-row-background);
+}
+
+.pricing-table tr:hover {
+    background-color: var(--table-hover-row-background);
+}
+
+/* Información de ubicación */
+.location-info {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.location-info h3 {
+    font-size: 1.5em;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.location-info p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.location-info p i {
+    color: var(--secondary-color);
+    font-size: 1.3em;
+}
+
+/* --- Ocultar formularios/mensajes por defecto --- */
+.printing-form,
+.service-message {
+    display: none; /* Ocultar por defecto, se mostrará con JS */
+}
+
+/* --- Variables CSS para el modo oscuro (ajusta según tu dark-mode.css) --- */
+/* Estas variables deberían estar definidas en dark-mode.css o index.css,
+   pero las incluyo aquí como referencia para asegurar que el CSS de esta página
+   use las variables correctamente. */
+:root {
+    --primary-color: #166b3c; /* Azul vibrante */
+    --primary-hover-color: #137438;
+    --secondary-color: #28a745; /* Verde para acentos */
+    --secondary-hover-color: #218838;
+    --accent-color: #5dc097; /* Amarillo para botones de acción */
+    --accent-hover-color: #54b85c;
+
+    --background-color: #f8f9fa; /* Fondo claro general */
+    --card-background-color: #ffffff; /* Fondo para tarjetas/formularios */
+    --light-background-color: #e9ecef; /* Fondo más claro para elementos específicos */
+
+    --text-color: #343a40; /* Texto principal oscuro */
+    --text-light-color: #6c757d; /* Texto secundario/descripciones */
+    --heading-color: #343a40; /* Color de encabezados */
+    --button-text-color: #ffffff; /* Texto de botones */
+
+    --border-color: #dee2e6; /* Bordes sutiles */
+    --input-border-color: #ced4da; /* Bordes de inputs */
+    --input-background-color: #ffffff; /* Fondo de inputs */
+
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra de tarjeta */
+    --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra al pasar el mouse */
+    --table-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra de tabla */
+
+    --table-header-background: #f1f3f5;
+    --table-header-text: #495057;
+    --table-border-color: #e9ecef;
+    --table-even-row-background: #fdfdfe;
+    --table-hover-row-background: #f6f6f6;
+
+    --danger-color: #dc3545;
+    --danger-hover-color: #c82333;
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    --primary-color: #4CAF50; /* Verde más suave para el modo oscuro */
+    --primary-hover-color: #45a049;
+    --secondary-color: #308549; /* Azul para acentos en dark mode */
+    --secondary-hover-color: #2c8549;
+    --accent-color: #51c96b; /* Amarillo para botones de acción en dark mode */
+    --accent-hover-color: #59cc76;
+
+    --background-color: #2c2c2c;
+    --card-background-color: #3a3a3a;
+    --light-background-color: #454545;
+
+    --text-color: #e0e0e0;
+    --text-light-color: #b0b0b0;
+    --heading-color: #f0f0f0;
+    --button-text-color: #ffffff;
+
+    --border-color: #555555;
+    --input-border-color: #666666;
+    --input-background-color: #4a4a4a;
+
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --table-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+    --table-header-background: #4a4a4a;
+    --table-header-text: #f0f0f0;
+    --table-border-color: #666666;
+    --table-even-row-background: #3f3f3f;
+    --table-hover-row-background: #4e4e4e;
+
+    --danger-color: #ef5350;
+    --danger-hover-color: #d32f2f;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 992px) {
+    .service-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        max-width: 450px;
+    }
+
+    .printing-form,
+    .service-message {
+        padding: 30px;
+        max-width: 700px;
+    }
+
+    .printing-form h2,
+    .service-message h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .printing-services {
+        padding: 60px 0;
+    }
+
+    .printing-services h1 {
+        font-size: 2.2em;
+    }
+
+    .printing-services .service-description {
+        font-size: 1em;
+        margin-bottom: 40px;
+        padding: 0 15px;
+    }
+
+    .service-options {
+        gap: 20px;
+    }
+
+    .service-card {
+        min-width: unset;
+        width: 90%;
+        max-width: 380px;
+        padding: 25px;
+    }
+
+    .service-card i {
+        font-size: 3em;
+    }
+
+    .service-card h3 {
+        font-size: 1.4em;
+    }
+
+    .printing-form,
+    .service-message {
+        padding: 25px;
+        margin: 0 auto 40px;
+        max-width: 90%;
+    }
+
+    .printing-form h2,
+    .service-message h2 {
+        font-size: 1.6em;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-step h3 {
+        font-size: 1.6em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .file-upload {
+        padding: 20px;
+    }
+
+    .file-upload .upload-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .file-list li {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .pricing-table h3 {
+        font-size: 1.3em;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .location-info p {
+        font-size: 1em;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .printing-services h1 {
+        font-size: 1.8em;
+    }
+
+    .service-card {
+        width: 95%;
+    }
+
+    .printing-form h2,
+    .service-message h2 {
+        font-size: 1.4em;
+    }
+
+    .form-step h3 {
+        font-size: 1.4em;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+        font-size: 0.85em;
+    }
+}

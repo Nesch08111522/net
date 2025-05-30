@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio & Progetto - Carrito</title>
+    <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link href="SP WHITE.ico" rel="icon" type="image/x-icon" />
+    <script src="main.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="fullscreen.js"></script>
+    <link href="SP WHITE.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="pre-carga">
+        <div class="pre-carga-contenido">
+            <img src="logoempresa.webp.png" alt="Logo" class="logo" align="center">
+            <div class="loader"></div>
+            <p class="nombre-pagina"> Studio & Progetto </p>
+        </div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logoempresa.webp.png" alt="Studio & Progetto" width="60" height="60">
+                <span>STUDIO & PROGETTO</span>
+            </a>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="copias-impresion.html">Copias e Impresiones</a></li>
+                    <li><a href="delivery.html" class="nav-icon"><i class="fas fa-truck"></i></a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <a href="carrito.html" class="nav-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="iniciar-sesion.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido del carrito -->
+    <section class="cart-section">
+        <div class="container">
+            <h1>Tu Carrito de Compras</h1>
+
+            <div class="cart-container">
+                <div class="cart-items" id="cart-items-container">
+                    <!-- Los productos se agregarán dinámicamente aquí -->
+                    <div class="cart-empty" id="empty-cart-message">
+                        <p>No has comprado nada todavía</p>
+                        <p>¿Deseas agregar productos al carrito?</p>
+                        <a href="productos.html" class="btn">Ir a productos</a>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Resumen de compra</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">S/0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Delivery:</span>
+                        <span id="delivery-cost">S/0.00</span>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">S/0.00</span>
+                    </div>
+
+                    <div class="delivery-option">
+                        <label>
+                            <input type="checkbox" id="deliveryCheckbox">
+                            <span>Necesito delivery</span>
+                        </label>
+                    </div>
+
+                    <button class="btn checkout-btn" id="checkoutBtn" disabled>Proceder al pago</button>
+                    <a href="productos.html" class="continue-shopping">Continuar comprando</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de pantalla completa -->
+    <button class="fullscreen-btn" title="Pantalla completa">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <div id="footer-trigger"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> +51 939275406</p>
+                <p><i class="fas fa-envelope"></i>studioprogettosac@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sobre nosotros</h3>
+                <ul>
+                    <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado</p>
+                <p>8am - 9pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Ofertas Especiales</a></li>
+                    <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Studio & Progetto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mostrar contenido después de la precarga
+        function mostrarContenido() {
+            document.querySelector('.pre-carga').classList.add('desaparecer');
+            setTimeout(() => {
+                document.querySelector('.pre-carga').style.display = 'none';
+            }, 500);
+        }
+
+        setTimeout(mostrarContenido, 2000);
+        window.addEventListener('load', mostrarContenido);
+
+        // Menú móvil
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navList = document.querySelector('.navbar ul');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Carrito de compras
+        document.addEventListener('DOMContentLoaded', function () {
+            // Verificar si hay productos en el carrito
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            const subtotalElement = document.getElementById('subtotal');
+            const deliveryCostElement = document.getElementById('delivery-cost');
+            const totalElement = document.getElementById('total');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const deliveryCheckbox = document.getElementById('deliveryCheckbox');
+
+            // Mostrar productos del carrito
+            function renderCart() {
+                cartItemsContainer.innerHTML = '';
+
+                if (cart.length === 0) {
+                    emptyCartMessage.style.display = 'block';
+                    checkoutBtn.disabled = true;
+                    return;
+                }
+
+                emptyCartMessage.style.display = 'none';
+
+                // Crear encabezado
+                const cartHeader = document.createElement('div');
+                cartHeader.className = 'cart-header';
+                cartHeader.innerHTML = `
+                    <div class="header-item">Producto</div>
+                    <div class="header-item">Precio</div>
+                    <div class="header-item">Cantidad</div>
+                    <div class="header-item">Total</div>
+                    <div class="header-item">Eliminar</div>
+                `;
+                cartItemsContainer.appendChild(cartHeader);
+
+                // Agregar cada producto
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="item-product">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="product-info">
+                                <h3>${item.name}</h3>
+                                <p>Código: ${item.code}</p>
+                            </div>
+                        </div>
+                        <div class="item-price">S/${item.price.toFixed(2)}</div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn decrease" data-index="${index}">-</button>
+                            <input type="number" value="${item.quantity}" min="1" data-index="${index}">
+                            <button class="quantity-btn increase" data-index="${index}">+</button>
+                        </div>
+                        <div class="item-total">S/${(item.price * item.quantity).toFixed(2)}</div>
+                        <div class="item-remove">
+                            <button class="remove-btn" data-index="${index}"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+
+                updateTotals();
+            }
+
+            // Actualizar totales
+            function updateTotals() {
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const deliveryCost = deliveryCheckbox.checked ? 5 : 0;
+                const total = subtotal + deliveryCost;
+
+                subtotalElement.textContent = `S/${subtotal.toFixed(2)}`;
+                deliveryCostElement.textContent = `S/${deliveryCost.toFixed(2)}`;
+                totalElement.textContent = `S/${total.toFixed(2)}`;
+
+                checkoutBtn.disabled = cart.length === 0;
+            }
+
+            // Eventos de cantidad
+            cartItemsContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('decrease')) {
+                    const index = e.target.getAttribute('data-index');
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity--;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        renderCart();
+                    }
+                } else if (e.target.classList.contains('increase')) {
+                    const index = e.target.getAttribute('data-index');
+                    cart[index].quantity++;
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                } else if (e.target.classList.contains('remove-btn') || e.target.closest('.remove-btn')) {
+                    const index = e.target.getAttribute('data-index') ||
+                        e.target.closest('.remove-btn').getAttribute('data-index');
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                }
+            });
+
+            // Eventos de cambio en inputs de cantidad
+            cartItemsContainer.addEventListener('change', function (e) {
+                if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
+                    const index = e.target.getAttribute('data-index');
+                    const newQuantity = parseInt(e.target.value);
+
+                    if (newQuantity > 0) {
+                        cart[index].quantity = newQuantity;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        renderCart();
+                    } else {
+                        e.target.value = cart[index].quantity;
+                    }
+                }
+            });
+
+            // Evento de delivery
+            deliveryCheckbox.addEventListener('change', updateTotals);
+
+            // Evento de checkout
+            checkoutBtn.addEventListener('click', function () {
+                // Crear mensaje para WhatsApp
+                let message = "¡Hola! Quiero realizar la siguiente compra:\n\n";
+
+                cart.forEach(item => {
+                    message += `- ${item.name} (${item.code}): ${item.quantity} x S/${item.price.toFixed(2)} = S/${(item.price * item.quantity).toFixed(2)}\n`;
+                });
+
+                message += `\nSubtotal: ${subtotalElement.textContent}\n`;
+                message += `Delivery: ${deliveryCostElement.textContent}\n`;
+                message += `Total: ${totalElement.textContent}\n\n`;
+                message += `Por favor, confirmen la disponibilidad y el proceso de pago.`;
+
+                // Codificar el mensaje para URL
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/51939275406?text=${encodedMessage}`;
+
+                // Abrir WhatsApp
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // Renderizar carrito inicial
+            renderCart();
+        });
+    </script>
+</body>
+
+</html>
